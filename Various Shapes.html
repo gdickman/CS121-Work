@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<title>Various Shapes</title>
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 12px;
+   margin: 8px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 { 
+   font-size:2.2em; 
+}
+
+h2 { 
+   font-size:1.8em; 
+}
+
+h3 { 
+   font-size:1.4em; 
+}
+
+h4 { 
+   font-size:1.0em; 
+}
+
+h5 { 
+   font-size:0.9em; 
+}
+
+h6 { 
+   font-size:0.8em; 
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre {	
+   margin-top: 0;
+   max-width: 95%;
+   border: 1px solid #ccc;
+   white-space: pre-wrap;
+}
+
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code.r, code.cpp {
+   background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * { 
+      background: transparent !important; 
+      color: black !important; 
+      filter:none !important; 
+      -ms-filter: none !important; 
+   }
+
+   body { 
+      font-size:12pt; 
+      max-width:100%; 
+   }
+       
+   a, a:visited { 
+      text-decoration: underline; 
+   }
+
+   hr { 
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote { 
+      padding-right: 1em; 
+      page-break-inside: avoid; 
+   }
+
+   tr, img { 
+      page-break-inside: avoid; 
+   }
+
+   img { 
+      max-width: 100% !important; 
+   }
+
+   @page :left { 
+      margin: 15mm 20mm 15mm 10mm; 
+   }
+     
+   @page :right { 
+      margin: 15mm 10mm 15mm 20mm; 
+   }
+
+   p, h2, h3 { 
+      orphans: 3; widows: 3; 
+   }
+
+   h2, h3 { 
+      page-break-after: avoid; 
+   }
+}
+
+</style>
+
+<!-- Styles for R syntax highlighter -->
+<style type="text/css">
+   pre .operator,
+   pre .paren {
+     color: rgb(104, 118, 135)
+   }
+
+   pre .literal {
+     color: rgb(88, 72, 246)
+   }
+
+   pre .number {
+     color: rgb(0, 0, 205);
+   }
+
+   pre .comment {
+     color: rgb(76, 136, 107);
+   }
+
+   pre .keyword {
+     color: rgb(0, 0, 255);
+   }
+
+   pre .identifier {
+     color: rgb(0, 0, 0);
+   }
+
+   pre .string {
+     color: rgb(3, 106, 7);
+   }
+</style>
+
+<!-- R syntax highlighter -->
+<script type="text/javascript">
+var hljs=new function(){function m(p){return p.replace(/&/gm,"&amp;").replace(/</gm,"&lt;")}function f(r,q,p){return RegExp(q,"m"+(r.cI?"i":"")+(p?"g":""))}function b(r){for(var p=0;p<r.childNodes.length;p++){var q=r.childNodes[p];if(q.nodeName=="CODE"){return q}if(!(q.nodeType==3&&q.nodeValue.match(/\s+/))){break}}}function h(t,s){var p="";for(var r=0;r<t.childNodes.length;r++){if(t.childNodes[r].nodeType==3){var q=t.childNodes[r].nodeValue;if(s){q=q.replace(/\n/g,"")}p+=q}else{if(t.childNodes[r].nodeName=="BR"){p+="\n"}else{p+=h(t.childNodes[r])}}}if(/MSIE [678]/.test(navigator.userAgent)){p=p.replace(/\r/g,"\n")}return p}function a(s){var r=s.className.split(/\s+/);r=r.concat(s.parentNode.className.split(/\s+/));for(var q=0;q<r.length;q++){var p=r[q].replace(/^language-/,"");if(e[p]){return p}}}function c(q){var p=[];(function(s,t){for(var r=0;r<s.childNodes.length;r++){if(s.childNodes[r].nodeType==3){t+=s.childNodes[r].nodeValue.length}else{if(s.childNodes[r].nodeName=="BR"){t+=1}else{if(s.childNodes[r].nodeType==1){p.push({event:"start",offset:t,node:s.childNodes[r]});t=arguments.callee(s.childNodes[r],t);p.push({event:"stop",offset:t,node:s.childNodes[r]})}}}}return t})(q,0);return p}function k(y,w,x){var q=0;var z="";var s=[];function u(){if(y.length&&w.length){if(y[0].offset!=w[0].offset){return(y[0].offset<w[0].offset)?y:w}else{return w[0].event=="start"?y:w}}else{return y.length?y:w}}function t(D){var A="<"+D.nodeName.toLowerCase();for(var B=0;B<D.attributes.length;B++){var C=D.attributes[B];A+=" "+C.nodeName.toLowerCase();if(C.value!==undefined&&C.value!==false&&C.value!==null){A+='="'+m(C.value)+'"'}}return A+">"}while(y.length||w.length){var v=u().splice(0,1)[0];z+=m(x.substr(q,v.offset-q));q=v.offset;if(v.event=="start"){z+=t(v.node);s.push(v.node)}else{if(v.event=="stop"){var p,r=s.length;do{r--;p=s[r];z+=("</"+p.nodeName.toLowerCase()+">")}while(p!=v.node);s.splice(r,1);while(r<s.length){z+=t(s[r]);r++}}}}return z+m(x.substr(q))}function j(){function q(x,y,v){if(x.compiled){return}var u;var s=[];if(x.k){x.lR=f(y,x.l||hljs.IR,true);for(var w in x.k){if(!x.k.hasOwnProperty(w)){continue}if(x.k[w] instanceof Object){u=x.k[w]}else{u=x.k;w="keyword"}for(var r in u){if(!u.hasOwnProperty(r)){continue}x.k[r]=[w,u[r]];s.push(r)}}}if(!v){if(x.bWK){x.b="\\b("+s.join("|")+")\\s"}x.bR=f(y,x.b?x.b:"\\B|\\b");if(!x.e&&!x.eW){x.e="\\B|\\b"}if(x.e){x.eR=f(y,x.e)}}if(x.i){x.iR=f(y,x.i)}if(x.r===undefined){x.r=1}if(!x.c){x.c=[]}x.compiled=true;for(var t=0;t<x.c.length;t++){if(x.c[t]=="self"){x.c[t]=x}q(x.c[t],y,false)}if(x.starts){q(x.starts,y,false)}}for(var p in e){if(!e.hasOwnProperty(p)){continue}q(e[p].dM,e[p],true)}}function d(B,C){if(!j.called){j();j.called=true}function q(r,M){for(var L=0;L<M.c.length;L++){if((M.c[L].bR.exec(r)||[null])[0]==r){return M.c[L]}}}function v(L,r){if(D[L].e&&D[L].eR.test(r)){return 1}if(D[L].eW){var M=v(L-1,r);return M?M+1:0}return 0}function w(r,L){return L.i&&L.iR.test(r)}function K(N,O){var M=[];for(var L=0;L<N.c.length;L++){M.push(N.c[L].b)}var r=D.length-1;do{if(D[r].e){M.push(D[r].e)}r--}while(D[r+1].eW);if(N.i){M.push(N.i)}return f(O,M.join("|"),true)}function p(M,L){var N=D[D.length-1];if(!N.t){N.t=K(N,E)}N.t.lastIndex=L;var r=N.t.exec(M);return r?[M.substr(L,r.index-L),r[0],false]:[M.substr(L),"",true]}function z(N,r){var L=E.cI?r[0].toLowerCase():r[0];var M=N.k[L];if(M&&M instanceof Array){return M}return false}function F(L,P){L=m(L);if(!P.k){return L}var r="";var O=0;P.lR.lastIndex=0;var M=P.lR.exec(L);while(M){r+=L.substr(O,M.index-O);var N=z(P,M);if(N){x+=N[1];r+='<span class="'+N[0]+'">'+M[0]+"</span>"}else{r+=M[0]}O=P.lR.lastIndex;M=P.lR.exec(L)}return r+L.substr(O,L.length-O)}function J(L,M){if(M.sL&&e[M.sL]){var r=d(M.sL,L);x+=r.keyword_count;return r.value}else{return F(L,M)}}function I(M,r){var L=M.cN?'<span class="'+M.cN+'">':"";if(M.rB){y+=L;M.buffer=""}else{if(M.eB){y+=m(r)+L;M.buffer=""}else{y+=L;M.buffer=r}}D.push(M);A+=M.r}function G(N,M,Q){var R=D[D.length-1];if(Q){y+=J(R.buffer+N,R);return false}var P=q(M,R);if(P){y+=J(R.buffer+N,R);I(P,M);return P.rB}var L=v(D.length-1,M);if(L){var O=R.cN?"</span>":"";if(R.rE){y+=J(R.buffer+N,R)+O}else{if(R.eE){y+=J(R.buffer+N,R)+O+m(M)}else{y+=J(R.buffer+N+M,R)+O}}while(L>1){O=D[D.length-2].cN?"</span>":"";y+=O;L--;D.length--}var r=D[D.length-1];D.length--;D[D.length-1].buffer="";if(r.starts){I(r.starts,"")}return R.rE}if(w(M,R)){throw"Illegal"}}var E=e[B];var D=[E.dM];var A=0;var x=0;var y="";try{var s,u=0;E.dM.buffer="";do{s=p(C,u);var t=G(s[0],s[1],s[2]);u+=s[0].length;if(!t){u+=s[1].length}}while(!s[2]);if(D.length>1){throw"Illegal"}return{r:A,keyword_count:x,value:y}}catch(H){if(H=="Illegal"){return{r:0,keyword_count:0,value:m(C)}}else{throw H}}}function g(t){var p={keyword_count:0,r:0,value:m(t)};var r=p;for(var q in e){if(!e.hasOwnProperty(q)){continue}var s=d(q,t);s.language=q;if(s.keyword_count+s.r>r.keyword_count+r.r){r=s}if(s.keyword_count+s.r>p.keyword_count+p.r){r=p;p=s}}if(r.language){p.second_best=r}return p}function i(r,q,p){if(q){r=r.replace(/^((<[^>]+>|\t)+)/gm,function(t,w,v,u){return w.replace(/\t/g,q)})}if(p){r=r.replace(/\n/g,"<br>")}return r}function n(t,w,r){var x=h(t,r);var v=a(t);var y,s;if(v){y=d(v,x)}else{return}var q=c(t);if(q.length){s=document.createElement("pre");s.innerHTML=y.value;y.value=k(q,c(s),x)}y.value=i(y.value,w,r);var u=t.className;if(!u.match("(\\s|^)(language-)?"+v+"(\\s|$)")){u=u?(u+" "+v):v}if(/MSIE [678]/.test(navigator.userAgent)&&t.tagName=="CODE"&&t.parentNode.tagName=="PRE"){s=t.parentNode;var p=document.createElement("div");p.innerHTML="<pre><code>"+y.value+"</code></pre>";t=p.firstChild.firstChild;p.firstChild.cN=s.cN;s.parentNode.replaceChild(p.firstChild,s)}else{t.innerHTML=y.value}t.className=u;t.result={language:v,kw:y.keyword_count,re:y.r};if(y.second_best){t.second_best={language:y.second_best.language,kw:y.second_best.keyword_count,re:y.second_best.r}}}function o(){if(o.called){return}o.called=true;var r=document.getElementsByTagName("pre");for(var p=0;p<r.length;p++){var q=b(r[p]);if(q){n(q,hljs.tabReplace)}}}function l(){if(window.addEventListener){window.addEventListener("DOMContentLoaded",o,false);window.addEventListener("load",o,false)}else{if(window.attachEvent){window.attachEvent("onload",o)}else{window.onload=o}}}var e={};this.LANGUAGES=e;this.highlight=d;this.highlightAuto=g;this.fixMarkup=i;this.highlightBlock=n;this.initHighlighting=o;this.initHighlightingOnLoad=l;this.IR="[a-zA-Z][a-zA-Z0-9_]*";this.UIR="[a-zA-Z_][a-zA-Z0-9_]*";this.NR="\\b\\d+(\\.\\d+)?";this.CNR="\\b(0[xX][a-fA-F0-9]+|(\\d+(\\.\\d*)?|\\.\\d+)([eE][-+]?\\d+)?)";this.BNR="\\b(0b[01]+)";this.RSR="!|!=|!==|%|%=|&|&&|&=|\\*|\\*=|\\+|\\+=|,|\\.|-|-=|/|/=|:|;|<|<<|<<=|<=|=|==|===|>|>=|>>|>>=|>>>|>>>=|\\?|\\[|\\{|\\(|\\^|\\^=|\\||\\|=|\\|\\||~";this.ER="(?![\\s\\S])";this.BE={b:"\\\\.",r:0};this.ASM={cN:"string",b:"'",e:"'",i:"\\n",c:[this.BE],r:0};this.QSM={cN:"string",b:'"',e:'"',i:"\\n",c:[this.BE],r:0};this.CLCM={cN:"comment",b:"//",e:"$"};this.CBLCLM={cN:"comment",b:"/\\*",e:"\\*/"};this.HCM={cN:"comment",b:"#",e:"$"};this.NM={cN:"number",b:this.NR,r:0};this.CNM={cN:"number",b:this.CNR,r:0};this.BNM={cN:"number",b:this.BNR,r:0};this.inherit=function(r,s){var p={};for(var q in r){p[q]=r[q]}if(s){for(var q in s){p[q]=s[q]}}return p}}();hljs.LANGUAGES.cpp=function(){var a={keyword:{"false":1,"int":1,"float":1,"while":1,"private":1,"char":1,"catch":1,"export":1,virtual:1,operator:2,sizeof:2,dynamic_cast:2,typedef:2,const_cast:2,"const":1,struct:1,"for":1,static_cast:2,union:1,namespace:1,unsigned:1,"long":1,"throw":1,"volatile":2,"static":1,"protected":1,bool:1,template:1,mutable:1,"if":1,"public":1,friend:2,"do":1,"return":1,"goto":1,auto:1,"void":2,"enum":1,"else":1,"break":1,"new":1,extern:1,using:1,"true":1,"class":1,asm:1,"case":1,typeid:1,"short":1,reinterpret_cast:2,"default":1,"double":1,register:1,explicit:1,signed:1,typename:1,"try":1,"this":1,"switch":1,"continue":1,wchar_t:1,inline:1,"delete":1,alignof:1,char16_t:1,char32_t:1,constexpr:1,decltype:1,noexcept:1,nullptr:1,static_assert:1,thread_local:1,restrict:1,_Bool:1,complex:1},built_in:{std:1,string:1,cin:1,cout:1,cerr:1,clog:1,stringstream:1,istringstream:1,ostringstream:1,auto_ptr:1,deque:1,list:1,queue:1,stack:1,vector:1,map:1,set:1,bitset:1,multiset:1,multimap:1,unordered_set:1,unordered_map:1,unordered_multiset:1,unordered_multimap:1,array:1,shared_ptr:1}};return{dM:{k:a,i:"</",c:[hljs.CLCM,hljs.CBLCLM,hljs.QSM,{cN:"string",b:"'\\\\?.",e:"'",i:"."},{cN:"number",b:"\\b(\\d+(\\.\\d*)?|\\.\\d+)(u|U|l|L|ul|UL|f|F)"},hljs.CNM,{cN:"preprocessor",b:"#",e:"$"},{cN:"stl_container",b:"\\b(deque|list|queue|stack|vector|map|set|bitset|multiset|multimap|unordered_map|unordered_set|unordered_multiset|unordered_multimap|array)\\s*<",e:">",k:a,r:10,c:["self"]}]}}}();hljs.LANGUAGES.r={dM:{c:[hljs.HCM,{cN:"number",b:"\\b0[xX][0-9a-fA-F]+[Li]?\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\b\\d+(?:[eE][+\\-]?\\d*)?L\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\b\\d+\\.(?!\\d)(?:i\\b)?",e:hljs.IMMEDIATE_RE,r:1},{cN:"number",b:"\\b\\d+(?:\\.\\d*)?(?:[eE][+\\-]?\\d*)?i?\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\.\\d+(?:[eE][+\\-]?\\d*)?i?\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"keyword",b:"(?:tryCatch|library|setGeneric|setGroupGeneric)\\b",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\.\\.\\.",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\.\\.\\d+(?![\\w.])",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\b(?:function)",e:hljs.IMMEDIATE_RE,r:2},{cN:"keyword",b:"(?:if|in|break|next|repeat|else|for|return|switch|while|try|stop|warning|require|attach|detach|source|setMethod|setClass)\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"literal",b:"(?:NA|NA_integer_|NA_real_|NA_character_|NA_complex_)\\b",e:hljs.IMMEDIATE_RE,r:10},{cN:"literal",b:"(?:NULL|TRUE|FALSE|T|F|Inf|NaN)\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"identifier",b:"[a-zA-Z.][a-zA-Z0-9._]*\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"operator",b:"<\\-(?!\\s*\\d)",e:hljs.IMMEDIATE_RE,r:2},{cN:"operator",b:"\\->|<\\-",e:hljs.IMMEDIATE_RE,r:1},{cN:"operator",b:"%%|~",e:hljs.IMMEDIATE_RE},{cN:"operator",b:">=|<=|==|!=|\\|\\||&&|=|\\+|\\-|\\*|/|\\^|>|<|!|&|\\||\\$|:",e:hljs.IMMEDIATE_RE,r:0},{cN:"operator",b:"%",e:"%",i:"\\n",r:1},{cN:"identifier",b:"`",e:"`",r:0},{cN:"string",b:'"',e:'"',c:[hljs.BE],r:0},{cN:"string",b:"'",e:"'",c:[hljs.BE],r:0},{cN:"paren",b:"[[({\\])}]",e:hljs.IMMEDIATE_RE,r:0}]}};
+hljs.initHighlightingOnLoad();
+</script>
+
+
+
+
+</head>
+
+<body>
+<h1>Various Shapes</h1>
+
+<h1></h1>
+
+<ul>
+<li>To create a plot, use the command plot()</li>
+</ul>
+
+<pre><code class="r">plot(1:2, xlim = c(0, 100), ylim = c(0, 100), type = &quot;n&quot;, xlab = &quot;&quot;, ylab = &quot;&quot;)
+</code></pre>
+
+<p><img src="data:image/png;base64,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" alt="plot of chunk plot"/> </p>
+
+<ul>
+<li>To create a polygon, use the command polygon()</li>
+</ul>
+
+<pre><code class="r">plot(1:2, xlim = c(0, 100), ylim = c(0, 100), type = &quot;n&quot;, xlab = &quot;&quot;, ylab = &quot;&quot;)
+polygon(c(25, 35, 35, 25), c(25, 25, 35, 35), col = &quot;red&quot;, border = &quot;black&quot;)
+</code></pre>
+
+<p><img src="data:image/png;base64,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" alt="plot of chunk unnamed-chunk-1"/> </p>
+
+<ul>
+<li>In order to create a circle, install the poltrix package, and use the command draw.circle()</li>
+</ul>
+
+<pre><code class="r">plot(1:2, xlim = c(0, 100), ylim = c(0, 100), type = &quot;n&quot;, xlab = &quot;&quot;, ylab = &quot;&quot;)
+</code></pre>
+
+<p><img src="data:image/png;base64,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" alt="plot of chunk unnamed-chunk-2"/> </p>
+
+<pre><code class="r">draw.circle(50, 50, 20, 20, nv = 100, border = &quot;NA&quot;, col = &quot;lightblue&quot;)
+</code></pre>
+
+<pre><code>## Error: could not find function &quot;draw.circle&quot;
+</code></pre>
+
+<ul>
+<li>The second polygon is created similarly to the square, except 5 points are plotted because it is a pentagon</li>
+</ul>
+
+<pre><code class="r">plot(1:2, xlim = c(0, 100), ylim = c(0, 100), type = &quot;n&quot;, xlab = &quot;&quot;, ylab = &quot;&quot;)
+polygon(c(58, 63, 83, 88, 73), c(85, 65, 65, 85, 95), col = &quot;yellow&quot;, border = &quot;NA&quot;)
+</code></pre>
+
+<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAfgAAAH4CAMAAACR9g9NAAAAbFBMVEX9/v0AAAAAADkAAGUAOTkAOY8AZrU5AAA5ADk5AGU5OWU5OY85j9plAABlADllAGVlOQBlOY9ltf2POQCPOTmPZgCPtY+P29qP2/21ZgC1/v3ajzna24/a/v39tWX924/9/rX9/tr9/v3//wB3ZSsxAAAAJHRSTlP/////////////////////////////////////////////AP/mCh/yAAAACXBIWXMAAAsSAAALEgHS3X78AAAIwklEQVR4nO3d0WLaRhQA0ZDUdlJDnELaYlMjMP//j0UY2jikqcTeXWmZmRc9+VrOYZE2idG7F0P2bugTsGESHprw0ISHJjw04aEJD014aMJDEx6a8NCEhyY8NOGhCQ9NeGjCQxMemvDQhIcmPDThoQkPTXhowkMTHprw0ISHJjw04aEJD014aMJDEx6a8NCEhyY8NOGhCQ9NeGjCQxMemvDQhIcmPDThoQkPTXhowkMTHprw0ISHJjw04aEJD014aMJDEx5aCvzExlxG+ISvtdwJD014aMnwzd3hivHhqe9oG7RU+O1ifjiub557jrZBS4XfPDy9OXYfbYPmioeWfI3fzLzG15h39dCEh+Z2Dpo3d9AybOc6/jOADZorHprbOWje1UMTHprw0ISHlrydmx33bud3d8KPueQVv11MLxttg5b+Vr/5vLxotA2a13howkMTHprw0ISHJjw04aEJD034gdvtdoN8X+EHbffaAN9Z+CHb7QaTF364dt9W+psLP1S77yv77YUfqDP3wvLCD9IP2AvTCz9A/8FelF748v3EvZy88KX7KXs5euEL97/uheiFL1oX9jLywhesI3sReuHL1cM9P73wperHnl1e+DL1Zs9NL3yRLnLPSi98gS5lzykvfP4S3PPRC5+7NPZs9MLnLZ09k7zwWQtxz0IvfMai2HPQC5+tSPZ4eeFzFeweTS98nuLZg+mFz1Ie90h54TOUiz2SXvjwcrLH0QsfXW73IHnhY8vPHkQvfGRl2EPohQ+snHu6vPBhlWRPpxc+qNLsqfLCRyV8x9HXlvAdR19bwnccfXVV5S58XMJ3G311Cd9t9NUlfLfR11dN7sIHJnyn0dcXC76586HCpypy9zHikZHgNw9Pb47dR19hJHhX/DeR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" alt="plot of chunk unnamed-chunk-3"/> </p>
+
+<ul>
+<li>An ellipse can be drawn using the draw.ellipse() command from the plotrix package</li>
+</ul>
+
+<pre><code class="r">plot(1:2, xlim = c(0, 100), ylim = c(0, 100), type = &quot;n&quot;, xlab = &quot;&quot;, ylab = &quot;&quot;)
+</code></pre>
+
+<p><img src="data:image/png;base64,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" alt="plot of chunk unnamed-chunk-4"/> </p>
+
+<pre><code class="r">draw.ellipse(20, 60, 10, 25, col = &quot;lightpink&quot;, border = &quot;NA&quot;)
+</code></pre>
+
+<pre><code>## Error: could not find function &quot;draw.ellipse&quot;
+</code></pre>
+
+<ul>
+<li>The last sqaure can be drawn using the polygon() command</li>
+</ul>
+
+<pre><code class="r">plot(1:2, xlim = c(0, 100), ylim = c(0, 100), type = &quot;n&quot;, xlab = &quot;&quot;, ylab = &quot;&quot;)
+polygon(c(15, 30, 30, 15), c(45, 45, 60, 60), col = &quot;green&quot;, border = &quot;blue&quot;)
+</code></pre>
+
+<p><img src="data:image/png;base64,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" alt="plot of chunk unnamed-chunk-5"/> </p>
+
+<ul>
+<li>Together on a plot, it looks like this:</li>
+</ul>
+
+<pre><code class="r">plot(1:2, xlim = c(0, 100), ylim = c(0, 100), type = &quot;n&quot;, xlab = &quot;&quot;, ylab = &quot;&quot;)
+polygon(c(25, 35, 35, 25), c(25, 25, 35, 35), col = &quot;red&quot;, border = &quot;black&quot;)
+draw.circle(50, 50, 20, 20, nv = 100, border = &quot;NA&quot;, col = &quot;lightblue&quot;)
+</code></pre>
+
+<pre><code>## Error: could not find function &quot;draw.circle&quot;
+</code></pre>
+
+<pre><code class="r">polygon(c(58, 63, 83, 88, 73), c(85, 65, 65, 85, 95), col = &quot;yellow&quot;, border = &quot;NA&quot;)
+draw.ellipse(20, 60, 10, 25, col = &quot;lightpink&quot;, border = &quot;NA&quot;)
+</code></pre>
+
+<pre><code>## Error: could not find function &quot;draw.ellipse&quot;
+</code></pre>
+
+<pre><code class="r">polygon(c(15, 30, 30, 15), c(45, 45, 60, 60), col = &quot;green&quot;, border = &quot;blue&quot;)
+</code></pre>
+
+<p><img src="data:image/png;base64,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" alt="plot of chunk unnamed-chunk-6"/> </p>
+
+</body>
+
+</html>
+
