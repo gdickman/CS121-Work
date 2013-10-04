@@ -47,3 +47,4 @@ polygon(c(58,63,83,88,73),c(85,65,65,85,95),col="yellow",border="NA")
 draw.ellipse(20,60,10,25,col="lightpink",border="NA")
 polygon(c(15,30,30,15),c(45,45,60,60),col="green",border="blue")
 ```
+
