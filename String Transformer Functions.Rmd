@@ -1,0 +1,61 @@
+# Oct 1 2013
+
+## Reverser
+```{r}
+Reverser <- function(x) {
+  L<-strsplit(x, "")[[1]]
+  R<-L[rev(1:nchar(x))]
+  paste(R, collapse="")
+}
+
+```
+
+```{r}
+Reverser("turck")
+
+```
+
+## Scrambler
+```{r}
+Scrambler<-function(x){
+  S<-strsplit(x,"")[[1]]
+  Q<-S[sample(1:nchar(x))]
+  paste(Q, collapse="")
+}
+```
+
+```{r}
+Scrambler("hello")
+```
+
+## VowelBleeper
+```{r}
+VowelBleeper<-function(x){
+  gsub("e", "*", x)
+}
+```
+
+```{r}
+VowelBleeper("Elephant")
+```
+
+## L33t
+```{r}
+L33t<-function(x){
+  gsub("e", "3", x)
+  gsub("o", "0", x)
+  gsub("s", "5", x)
+  gsub("g", "9", x)
+}
+```
+
+```{r}
+L33t("graces")
+```
+
+## Substitution Cypher
+```{r}
+SC<-function(x){
+  
+}
+```
