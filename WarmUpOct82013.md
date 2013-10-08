@@ -1,0 +1,152 @@
+Classwork Warm-Up Oct. 08, 2013
+========================================================
+
+# A Sum of Numbers in a Vector -- Loops
+
+## Using `repeat()`
+
+```r
+mySumRepeat <- function(v) {
+    sofar <- 0
+    k <- 1
+    repeat {
+        sofar <- sofar + v[k]
+        k <- k + 1
+        if (k == length(v) + 1) 
+            break
+    }
+    return(sofar)
+}
+```
+
+
+
+```r
+mySumRepeat(1:10)
+```
+
+```
+## [1] 55
+```
+
+
+## Using `while()`
+
+```r
+mySumWhile <- function(v) {
+    sofar <- 0
+    k <- 1
+    while (k != (length(v) + 1)) {
+        sofar <- sofar + v[k]
+        k <- k + 1
+    }
+    return(sofar)
+}
+```
+
+
+
+```r
+mySumWhile(1:10)
+```
+
+```
+## [1] 55
+```
+
+
+## Using `for()`
+
+```r
+mySumFor <- function(v) {
+    sofar <- 0
+    for (k in 1:length(v)) {
+        sofar <- sofar + v[k]
+    }
+    return(sofar)
+}
+```
+
+
+
+```r
+mySumFor(1:10)
+```
+
+```
+## [1] 55
+```
+
+
+## Running Sum
+
+```r
+myRunningSum <- function(v) {
+    sofar <- 0
+    res <- c()
+    for (k in 1:length(v)) {
+        sofar <- sofar + v[k]
+        res <- c(res, sofar)
+    }
+    return(res)
+}
+```
+
+
+
+```r
+myRunningSum(1:3)
+```
+
+```
+## [1] 1 3 6
+```
+
+
+
+```r
+myRunningSumRev <- function(v) {
+    sofar <- 0
+    res <- c()
+    for (k in 1:length(v)) {
+        sofar <- sofar + v[k]
+        res <- c(sofar, res)
+    }
+    return(res)
+}
+```
+
+
+
+```r
+myRunningSumRev(1:3)
+```
+
+```
+## [1] 6 3 1
+```
+
+
+## Unique Elements
+
+```r
+myUnique <- function(v) {
+    already <- c()
+    for (k in v) {
+        if (!(k %in% already)) 
+            already <- c(already, k)
+    }
+    return(already)
+}
+```
+
+
+
+```r
+myUnique(c("dog", "ant", "bee", "cat", "dog"))
+```
+
+```
+## [1] "dog" "ant" "bee" "cat"
+```
+
