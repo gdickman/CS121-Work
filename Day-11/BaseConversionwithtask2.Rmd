@@ -1,0 +1,57 @@
+# Base Conversion
+
+## Task 1
+```{r}
+toBase <- function(z, b){
+  z<- z
+  sofar<-c()
+   repeat{
+     r<- z%%b
+     sofar<-c(r, sofar)
+     z<- (z-r)/b
+     if (z==0)
+       break
+  }
+  return(as.character(sofar))
+}
+```
+
+*Test Statements*
+```{r}
+toBase(z=10, b=2)
+```
+
+## Task 2
+
+**Without a Loop**
+```{r}
+baseToNumeric<-function(n, b){
+  howmany<-length(n)
+  herdsize<- b^((howmany-1):0)
+  return(sum(as.numeric(n)*herdsize))
+}
+```
+
+*Test Statements*
+```{r}
+baseToNumeric(c("7", "6", "5", "4"), 8)
+```
+
+**With a Loop**
+```{r}
+bTNLoop<-function(n, b){
+  sheepCount <- 0
+  boxSize<-1
+  n<-as.numeric(n)
+  for(k in length(n): 1){
+    sheepCount<-sheepCount + boxSize*n[k]
+    boxSize<-boxSize*b
+  }
+  return(sheepCount)
+}
+```
+
+*Test Statements*
+```{r}
+bTNLoop(c("7", "6", "5", "4"), 8)
+```
