@@ -30,8 +30,8 @@ Scrambler("hello")
 
 ## VowelBleeper
 ```{r}
-VowelBleeper<-function(x){
-  gsub("e", "*", x)
+VowelBleeper<-function(word){
+  gsub("[aeiouAEIOU]", "*", word)
 }
 ```
 
@@ -42,20 +42,13 @@ VowelBleeper("Elephant")
 ## L33t
 ```{r}
 L33t<-function(x){
-  gsub("e", "3", x)
-  gsub("o", "0", x)
-  gsub("s", "5", x)
-  gsub("g", "9", x)
+  one <- gsub("[Ee]", "3", x)
+  two<-gsub("[Oo]", "0", one)
+  three<-gsub("[Ss]", "5", two)
+  gsub("[Gg]", "9", three)
 }
 ```
 
 ```{r}
 L33t("graces")
-```
-
-## Substitution Cypher
-```{r}
-SC<-function(x){
-  
-}
 ```
