@@ -1,0 +1,39 @@
+# Syntax
+## Loops:
+repeat{},break{if}
+while{}
+for{}
+## Conditions:
+if(){}, else{}
+## Assignables:
+photo[3,]<-7
+names(df)[3]<-"fred"
+## Reserved words:
+function
+if
+while
+else
+repeat
+break
+
+# Other Languages
+## Latex
+$x^2$
+\frac{x}{y} (x over y)
+## Regular Expressions
+Is there an a or b in the thing:
+"a|b"
+"^  " start of the string
+"   $" end of the string
+.*
+## HTML
+<div class="span4">
+.....
+<\div>   indicates that you are done
+
+# External Files
+## Pictures
+read.jpeg()
+## Files
+read.csv()
+
