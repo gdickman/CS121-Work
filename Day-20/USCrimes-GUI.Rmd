@@ -1,0 +1,32 @@
+GUI for US Crime Rates
+========================================================
+
+```{r}
+testMyUI <- function(UI, serverFun=function(input, output){})
+  {
+  runApp( list(ui=bootstrapPage(UI),
+               server = serverFun))
+  }
+```
+
+```{r}
+require(shiny)
+load(USArrests)
+```
+
+# Creating the State
+```{r}
+
+```
+
+# Setting Up the 
+```{r}
+USCrimes <- function(UrbPop){
+  
+}
+```
+
+```{r}
+murdercolor<- with(small, ifelse(Murder==0, "blue", "red"))
+plot( Murder~Rape, data=small, col=murdercolor)
+```
