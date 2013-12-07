@@ -1,0 +1,61 @@
+#  Mathematics Mark-Up
+
+## Exercises I
+
+(1) $y=x^{13}$ $\$ 
+
+(2) $y=x^\frac{-3}{2}$  
+(3) $y=x^{2a}$ $\$ 
+
+(4) $u=t^{2·4}$ 
+
+(5) $z=\sqrt[3]u$ $\$
+
+(6) $y=\sqrt[3]x^{-5}$  
+
+(7) $u=\sqrt[5]\frac{1}{x^8}$ $\$ 
+
+(8) $2x^{a}.$  
+
+(9) $y=\sqrt[9]x^3$
+
+(10) $y=\sqrt[n]\frac{1}{x^m}$
+
+
+## Exercises XVII
+
+(1) Find $\int_\ y$ ${dx}$ when $y^2=4ax.$  
+
+(2) Find $\int_\ \frac{3}{x^4}$ ${dx}.$  $\$ 
+
+(3) Find $\int_\ \frac{1}{a} {x^3}dx.$  
+
+(4) Find $\int_\ (x^2+a)$ $dx.$  $\$ 
+
+(5) Integrate $5x^\frac{-7}{2}.$  
+
+(6) Find $\int_\ (4x^3 + 3x^2 + 2x + 1)$ ${dx}.$  
+
+(7) If $\frac{dy}{dx} = \frac{ax}{2} + \frac{bx^2}{3} + \frac{cx^3}{4}$ ; find $y.$   
+
+(8) Find $\int_\ (\frac{x^2+a}{x+a})$ $dx.$ $\$ 
+
+(9)Find $\int_\ (x+3)^3$ $dx.$  
+
+(10) Find $\int_\ (x+2)(x-a)$ $dx.$   
+
+(11) Find $\int_\ \left( \sqrt{x} + \sqrt[3]x \right) 3a^2$ $dx.$  
+
+(12) Find $\int_\ (sinθ- \frac{1}{2}) \frac{dθ}{3}.$   
+
+(13) Find $\int_\ cos^2aθ$ $dθ.$  $\$ 
+
+(14) Find $\int_\ sin^2θ$ $dθ.$ 
+
+(15) Find $\int_\ sin^2aθ$ $dθ.$  $\$ 
+
+(16) Find $\int_\ e^{3x}$ $dx.$  
+
+(17) Find $\int_\ \frac{dx}{1+x}.$  $\$ 
+
+(18) Find $\int_\ \frac{dx}{1-x}.$ 
