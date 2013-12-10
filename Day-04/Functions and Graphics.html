@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<title>Functions and Graphics </title>
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 12px;
+   margin: 8px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 { 
+   font-size:2.2em; 
+}
+
+h2 { 
+   font-size:1.8em; 
+}
+
+h3 { 
+   font-size:1.4em; 
+}
+
+h4 { 
+   font-size:1.0em; 
+}
+
+h5 { 
+   font-size:0.9em; 
+}
+
+h6 { 
+   font-size:0.8em; 
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre {	
+   margin-top: 0;
+   max-width: 95%;
+   border: 1px solid #ccc;
+   white-space: pre-wrap;
+}
+
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code.r, code.cpp {
+   background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * { 
+      background: transparent !important; 
+      color: black !important; 
+      filter:none !important; 
+      -ms-filter: none !important; 
+   }
+
+   body { 
+      font-size:12pt; 
+      max-width:100%; 
+   }
+       
+   a, a:visited { 
+      text-decoration: underline; 
+   }
+
+   hr { 
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote { 
+      padding-right: 1em; 
+      page-break-inside: avoid; 
+   }
+
+   tr, img { 
+      page-break-inside: avoid; 
+   }
+
+   img { 
+      max-width: 100% !important; 
+   }
+
+   @page :left { 
+      margin: 15mm 20mm 15mm 10mm; 
+   }
+     
+   @page :right { 
+      margin: 15mm 10mm 15mm 20mm; 
+   }
+
+   p, h2, h3 { 
+      orphans: 3; widows: 3; 
+   }
+
+   h2, h3 { 
+      page-break-after: avoid; 
+   }
+}
+
+</style>
+
+<!-- Styles for R syntax highlighter -->
+<style type="text/css">
+   pre .operator,
+   pre .paren {
+     color: rgb(104, 118, 135)
+   }
+
+   pre .literal {
+     color: rgb(88, 72, 246)
+   }
+
+   pre .number {
+     color: rgb(0, 0, 205);
+   }
+
+   pre .comment {
+     color: rgb(76, 136, 107);
+   }
+
+   pre .keyword {
+     color: rgb(0, 0, 255);
+   }
+
+   pre .identifier {
+     color: rgb(0, 0, 0);
+   }
+
+   pre .string {
+     color: rgb(3, 106, 7);
+   }
+</style>
+
+<!-- R syntax highlighter -->
+<script type="text/javascript">
+var hljs=new function(){function m(p){return p.replace(/&/gm,"&amp;").replace(/</gm,"&lt;")}function f(r,q,p){return RegExp(q,"m"+(r.cI?"i":"")+(p?"g":""))}function b(r){for(var p=0;p<r.childNodes.length;p++){var q=r.childNodes[p];if(q.nodeName=="CODE"){return q}if(!(q.nodeType==3&&q.nodeValue.match(/\s+/))){break}}}function h(t,s){var p="";for(var r=0;r<t.childNodes.length;r++){if(t.childNodes[r].nodeType==3){var q=t.childNodes[r].nodeValue;if(s){q=q.replace(/\n/g,"")}p+=q}else{if(t.childNodes[r].nodeName=="BR"){p+="\n"}else{p+=h(t.childNodes[r])}}}if(/MSIE [678]/.test(navigator.userAgent)){p=p.replace(/\r/g,"\n")}return p}function a(s){var r=s.className.split(/\s+/);r=r.concat(s.parentNode.className.split(/\s+/));for(var q=0;q<r.length;q++){var p=r[q].replace(/^language-/,"");if(e[p]){return p}}}function c(q){var p=[];(function(s,t){for(var r=0;r<s.childNodes.length;r++){if(s.childNodes[r].nodeType==3){t+=s.childNodes[r].nodeValue.length}else{if(s.childNodes[r].nodeName=="BR"){t+=1}else{if(s.childNodes[r].nodeType==1){p.push({event:"start",offset:t,node:s.childNodes[r]});t=arguments.callee(s.childNodes[r],t);p.push({event:"stop",offset:t,node:s.childNodes[r]})}}}}return t})(q,0);return p}function k(y,w,x){var q=0;var z="";var s=[];function u(){if(y.length&&w.length){if(y[0].offset!=w[0].offset){return(y[0].offset<w[0].offset)?y:w}else{return w[0].event=="start"?y:w}}else{return y.length?y:w}}function t(D){var A="<"+D.nodeName.toLowerCase();for(var B=0;B<D.attributes.length;B++){var C=D.attributes[B];A+=" "+C.nodeName.toLowerCase();if(C.value!==undefined&&C.value!==false&&C.value!==null){A+='="'+m(C.value)+'"'}}return A+">"}while(y.length||w.length){var v=u().splice(0,1)[0];z+=m(x.substr(q,v.offset-q));q=v.offset;if(v.event=="start"){z+=t(v.node);s.push(v.node)}else{if(v.event=="stop"){var p,r=s.length;do{r--;p=s[r];z+=("</"+p.nodeName.toLowerCase()+">")}while(p!=v.node);s.splice(r,1);while(r<s.length){z+=t(s[r]);r++}}}}return z+m(x.substr(q))}function j(){function q(x,y,v){if(x.compiled){return}var u;var s=[];if(x.k){x.lR=f(y,x.l||hljs.IR,true);for(var w in x.k){if(!x.k.hasOwnProperty(w)){continue}if(x.k[w] instanceof Object){u=x.k[w]}else{u=x.k;w="keyword"}for(var r in u){if(!u.hasOwnProperty(r)){continue}x.k[r]=[w,u[r]];s.push(r)}}}if(!v){if(x.bWK){x.b="\\b("+s.join("|")+")\\s"}x.bR=f(y,x.b?x.b:"\\B|\\b");if(!x.e&&!x.eW){x.e="\\B|\\b"}if(x.e){x.eR=f(y,x.e)}}if(x.i){x.iR=f(y,x.i)}if(x.r===undefined){x.r=1}if(!x.c){x.c=[]}x.compiled=true;for(var t=0;t<x.c.length;t++){if(x.c[t]=="self"){x.c[t]=x}q(x.c[t],y,false)}if(x.starts){q(x.starts,y,false)}}for(var p in e){if(!e.hasOwnProperty(p)){continue}q(e[p].dM,e[p],true)}}function d(B,C){if(!j.called){j();j.called=true}function q(r,M){for(var L=0;L<M.c.length;L++){if((M.c[L].bR.exec(r)||[null])[0]==r){return M.c[L]}}}function v(L,r){if(D[L].e&&D[L].eR.test(r)){return 1}if(D[L].eW){var M=v(L-1,r);return M?M+1:0}return 0}function w(r,L){return L.i&&L.iR.test(r)}function K(N,O){var M=[];for(var L=0;L<N.c.length;L++){M.push(N.c[L].b)}var r=D.length-1;do{if(D[r].e){M.push(D[r].e)}r--}while(D[r+1].eW);if(N.i){M.push(N.i)}return f(O,M.join("|"),true)}function p(M,L){var N=D[D.length-1];if(!N.t){N.t=K(N,E)}N.t.lastIndex=L;var r=N.t.exec(M);return r?[M.substr(L,r.index-L),r[0],false]:[M.substr(L),"",true]}function z(N,r){var L=E.cI?r[0].toLowerCase():r[0];var M=N.k[L];if(M&&M instanceof Array){return M}return false}function F(L,P){L=m(L);if(!P.k){return L}var r="";var O=0;P.lR.lastIndex=0;var M=P.lR.exec(L);while(M){r+=L.substr(O,M.index-O);var N=z(P,M);if(N){x+=N[1];r+='<span class="'+N[0]+'">'+M[0]+"</span>"}else{r+=M[0]}O=P.lR.lastIndex;M=P.lR.exec(L)}return r+L.substr(O,L.length-O)}function J(L,M){if(M.sL&&e[M.sL]){var r=d(M.sL,L);x+=r.keyword_count;return r.value}else{return F(L,M)}}function I(M,r){var L=M.cN?'<span class="'+M.cN+'">':"";if(M.rB){y+=L;M.buffer=""}else{if(M.eB){y+=m(r)+L;M.buffer=""}else{y+=L;M.buffer=r}}D.push(M);A+=M.r}function G(N,M,Q){var R=D[D.length-1];if(Q){y+=J(R.buffer+N,R);return false}var P=q(M,R);if(P){y+=J(R.buffer+N,R);I(P,M);return P.rB}var L=v(D.length-1,M);if(L){var O=R.cN?"</span>":"";if(R.rE){y+=J(R.buffer+N,R)+O}else{if(R.eE){y+=J(R.buffer+N,R)+O+m(M)}else{y+=J(R.buffer+N+M,R)+O}}while(L>1){O=D[D.length-2].cN?"</span>":"";y+=O;L--;D.length--}var r=D[D.length-1];D.length--;D[D.length-1].buffer="";if(r.starts){I(r.starts,"")}return R.rE}if(w(M,R)){throw"Illegal"}}var E=e[B];var D=[E.dM];var A=0;var x=0;var y="";try{var s,u=0;E.dM.buffer="";do{s=p(C,u);var t=G(s[0],s[1],s[2]);u+=s[0].length;if(!t){u+=s[1].length}}while(!s[2]);if(D.length>1){throw"Illegal"}return{r:A,keyword_count:x,value:y}}catch(H){if(H=="Illegal"){return{r:0,keyword_count:0,value:m(C)}}else{throw H}}}function g(t){var p={keyword_count:0,r:0,value:m(t)};var r=p;for(var q in e){if(!e.hasOwnProperty(q)){continue}var s=d(q,t);s.language=q;if(s.keyword_count+s.r>r.keyword_count+r.r){r=s}if(s.keyword_count+s.r>p.keyword_count+p.r){r=p;p=s}}if(r.language){p.second_best=r}return p}function i(r,q,p){if(q){r=r.replace(/^((<[^>]+>|\t)+)/gm,function(t,w,v,u){return w.replace(/\t/g,q)})}if(p){r=r.replace(/\n/g,"<br>")}return r}function n(t,w,r){var x=h(t,r);var v=a(t);var y,s;if(v){y=d(v,x)}else{return}var q=c(t);if(q.length){s=document.createElement("pre");s.innerHTML=y.value;y.value=k(q,c(s),x)}y.value=i(y.value,w,r);var u=t.className;if(!u.match("(\\s|^)(language-)?"+v+"(\\s|$)")){u=u?(u+" "+v):v}if(/MSIE [678]/.test(navigator.userAgent)&&t.tagName=="CODE"&&t.parentNode.tagName=="PRE"){s=t.parentNode;var p=document.createElement("div");p.innerHTML="<pre><code>"+y.value+"</code></pre>";t=p.firstChild.firstChild;p.firstChild.cN=s.cN;s.parentNode.replaceChild(p.firstChild,s)}else{t.innerHTML=y.value}t.className=u;t.result={language:v,kw:y.keyword_count,re:y.r};if(y.second_best){t.second_best={language:y.second_best.language,kw:y.second_best.keyword_count,re:y.second_best.r}}}function o(){if(o.called){return}o.called=true;var r=document.getElementsByTagName("pre");for(var p=0;p<r.length;p++){var q=b(r[p]);if(q){n(q,hljs.tabReplace)}}}function l(){if(window.addEventListener){window.addEventListener("DOMContentLoaded",o,false);window.addEventListener("load",o,false)}else{if(window.attachEvent){window.attachEvent("onload",o)}else{window.onload=o}}}var e={};this.LANGUAGES=e;this.highlight=d;this.highlightAuto=g;this.fixMarkup=i;this.highlightBlock=n;this.initHighlighting=o;this.initHighlightingOnLoad=l;this.IR="[a-zA-Z][a-zA-Z0-9_]*";this.UIR="[a-zA-Z_][a-zA-Z0-9_]*";this.NR="\\b\\d+(\\.\\d+)?";this.CNR="\\b(0[xX][a-fA-F0-9]+|(\\d+(\\.\\d*)?|\\.\\d+)([eE][-+]?\\d+)?)";this.BNR="\\b(0b[01]+)";this.RSR="!|!=|!==|%|%=|&|&&|&=|\\*|\\*=|\\+|\\+=|,|\\.|-|-=|/|/=|:|;|<|<<|<<=|<=|=|==|===|>|>=|>>|>>=|>>>|>>>=|\\?|\\[|\\{|\\(|\\^|\\^=|\\||\\|=|\\|\\||~";this.ER="(?![\\s\\S])";this.BE={b:"\\\\.",r:0};this.ASM={cN:"string",b:"'",e:"'",i:"\\n",c:[this.BE],r:0};this.QSM={cN:"string",b:'"',e:'"',i:"\\n",c:[this.BE],r:0};this.CLCM={cN:"comment",b:"//",e:"$"};this.CBLCLM={cN:"comment",b:"/\\*",e:"\\*/"};this.HCM={cN:"comment",b:"#",e:"$"};this.NM={cN:"number",b:this.NR,r:0};this.CNM={cN:"number",b:this.CNR,r:0};this.BNM={cN:"number",b:this.BNR,r:0};this.inherit=function(r,s){var p={};for(var q in r){p[q]=r[q]}if(s){for(var q in s){p[q]=s[q]}}return p}}();hljs.LANGUAGES.cpp=function(){var a={keyword:{"false":1,"int":1,"float":1,"while":1,"private":1,"char":1,"catch":1,"export":1,virtual:1,operator:2,sizeof:2,dynamic_cast:2,typedef:2,const_cast:2,"const":1,struct:1,"for":1,static_cast:2,union:1,namespace:1,unsigned:1,"long":1,"throw":1,"volatile":2,"static":1,"protected":1,bool:1,template:1,mutable:1,"if":1,"public":1,friend:2,"do":1,"return":1,"goto":1,auto:1,"void":2,"enum":1,"else":1,"break":1,"new":1,extern:1,using:1,"true":1,"class":1,asm:1,"case":1,typeid:1,"short":1,reinterpret_cast:2,"default":1,"double":1,register:1,explicit:1,signed:1,typename:1,"try":1,"this":1,"switch":1,"continue":1,wchar_t:1,inline:1,"delete":1,alignof:1,char16_t:1,char32_t:1,constexpr:1,decltype:1,noexcept:1,nullptr:1,static_assert:1,thread_local:1,restrict:1,_Bool:1,complex:1},built_in:{std:1,string:1,cin:1,cout:1,cerr:1,clog:1,stringstream:1,istringstream:1,ostringstream:1,auto_ptr:1,deque:1,list:1,queue:1,stack:1,vector:1,map:1,set:1,bitset:1,multiset:1,multimap:1,unordered_set:1,unordered_map:1,unordered_multiset:1,unordered_multimap:1,array:1,shared_ptr:1}};return{dM:{k:a,i:"</",c:[hljs.CLCM,hljs.CBLCLM,hljs.QSM,{cN:"string",b:"'\\\\?.",e:"'",i:"."},{cN:"number",b:"\\b(\\d+(\\.\\d*)?|\\.\\d+)(u|U|l|L|ul|UL|f|F)"},hljs.CNM,{cN:"preprocessor",b:"#",e:"$"},{cN:"stl_container",b:"\\b(deque|list|queue|stack|vector|map|set|bitset|multiset|multimap|unordered_map|unordered_set|unordered_multiset|unordered_multimap|array)\\s*<",e:">",k:a,r:10,c:["self"]}]}}}();hljs.LANGUAGES.r={dM:{c:[hljs.HCM,{cN:"number",b:"\\b0[xX][0-9a-fA-F]+[Li]?\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\b\\d+(?:[eE][+\\-]?\\d*)?L\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\b\\d+\\.(?!\\d)(?:i\\b)?",e:hljs.IMMEDIATE_RE,r:1},{cN:"number",b:"\\b\\d+(?:\\.\\d*)?(?:[eE][+\\-]?\\d*)?i?\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\.\\d+(?:[eE][+\\-]?\\d*)?i?\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"keyword",b:"(?:tryCatch|library|setGeneric|setGroupGeneric)\\b",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\.\\.\\.",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\.\\.\\d+(?![\\w.])",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\b(?:function)",e:hljs.IMMEDIATE_RE,r:2},{cN:"keyword",b:"(?:if|in|break|next|repeat|else|for|return|switch|while|try|stop|warning|require|attach|detach|source|setMethod|setClass)\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"literal",b:"(?:NA|NA_integer_|NA_real_|NA_character_|NA_complex_)\\b",e:hljs.IMMEDIATE_RE,r:10},{cN:"literal",b:"(?:NULL|TRUE|FALSE|T|F|Inf|NaN)\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"identifier",b:"[a-zA-Z.][a-zA-Z0-9._]*\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"operator",b:"<\\-(?!\\s*\\d)",e:hljs.IMMEDIATE_RE,r:2},{cN:"operator",b:"\\->|<\\-",e:hljs.IMMEDIATE_RE,r:1},{cN:"operator",b:"%%|~",e:hljs.IMMEDIATE_RE},{cN:"operator",b:">=|<=|==|!=|\\|\\||&&|=|\\+|\\-|\\*|/|\\^|>|<|!|&|\\||\\$|:",e:hljs.IMMEDIATE_RE,r:0},{cN:"operator",b:"%",e:"%",i:"\\n",r:1},{cN:"identifier",b:"`",e:"`",r:0},{cN:"string",b:'"',e:'"',c:[hljs.BE],r:0},{cN:"string",b:"'",e:"'",c:[hljs.BE],r:0},{cN:"paren",b:"[[({\\])}]",e:hljs.IMMEDIATE_RE,r:0}]}};
+hljs.initHighlightingOnLoad();
+</script>
+
+
+
+
+</head>
+
+<body>
+<h1>Functions and Graphics </h1>
+
+<h2>countOdds Function</h2>
+
+<pre><code class="r">countOdds &lt;- function(x) {
+    b &lt;- 0
+    for (k in x) {
+        if (k%%2 == 1) 
+            b &lt;- b + 1
+    }
+    return(b)
+}
+</code></pre>
+
+<h2>Examples</h2>
+
+<pre><code class="r">countOdds(1:9)
+</code></pre>
+
+<pre><code>## [1] 5
+</code></pre>
+
+<pre><code class="r">countOdds(c(3, 5, 7))
+</code></pre>
+
+<pre><code>## [1] 3
+</code></pre>
+
+<pre><code class="r">countOdds(c(3, 5, 7, 6, 2, 0))
+</code></pre>
+
+<pre><code>## [1] 3
+</code></pre>
+
+<h2>countEvens Function</h2>
+
+<pre><code class="r">countEvens &lt;- function(x) {
+    b &lt;- 0
+    for (k in x) {
+        if (k%%2 == 0) 
+            b &lt;- b + 1
+    }
+    return(b)
+}
+</code></pre>
+
+<h2>Examples</h2>
+
+<pre><code class="r">countEvens(2:50)
+</code></pre>
+
+<pre><code>## [1] 25
+</code></pre>
+
+<h2>hypotenuseLength Function</h2>
+
+<pre><code class="r">hypotenuseLength &lt;- function(x, y) {
+    h &lt;- sqrt(x^2 + y^2)
+    return(h)
+}
+</code></pre>
+
+<h2>Examples</h2>
+
+<pre><code class="r">hypotenuseLength(3, 4)
+</code></pre>
+
+<pre><code>## [1] 5
+</code></pre>
+
+<pre><code class="r">hypotenuseLength(13, 84)
+</code></pre>
+
+<pre><code>## [1] 85
+</code></pre>
+
+<h2>lawOfCosines Function</h2>
+
+<pre><code class="r">lawOfCosines &lt;- function(a, b, theta) {
+    c &lt;- (a^2) + (b^2) - (2 * a * b) * cos(theta)
+    return(sqrt(c))
+}
+</code></pre>
+
+<h2>Examples</h2>
+
+<pre><code class="r">lawOfCosines(13, 84, pi/2)
+</code></pre>
+
+<pre><code>## [1] 85
+</code></pre>
+
+<pre><code class="r">lawOfCosines(13, 84, 0)
+</code></pre>
+
+<pre><code>## [1] 71
+</code></pre>
+
+<pre><code class="r">lawOfCosines(5, 5, pi/3)
+</code></pre>
+
+<pre><code>## [1] 5
+</code></pre>
+
+<h2>thetaFromLengths Function</h2>
+
+<pre><code class="r">thetaFromLengths &lt;- function(a, b, c) {
+    m &lt;- (c^2) - (a^2) - (b^2)
+    n &lt;- m/(-2 * a * b)
+    p &lt;- acos(n)
+    return(p)
+}
+</code></pre>
+
+<h2>Examples</h2>
+
+<pre><code class="r">thetaFromLengths(3, 4, 5)
+</code></pre>
+
+<pre><code>## [1] 1.571
+</code></pre>
+
+<h2>thetaFromLengthsTest Function</h2>
+
+<pre><code class="r">thetaFromLengthsTest &lt;- function(a, b, theta) {
+    c &lt;- (a^2) + (b^2) - (2 * a * b) * cos(theta)
+    c &lt;- sqrt(c)
+    m &lt;- (c^2) - (a^2) - (b^2)
+    n &lt;- m/(-2 * a * b)
+    p &lt;- acos(n)
+    final &lt;- p - theta
+    return(final)
+}
+</code></pre>
+
+<h2>Example</h2>
+
+<pre><code class="r">thetaFromLengthsTest(13, 84, pi/2)
+</code></pre>
+
+<pre><code>## [1] 0
+</code></pre>
+
+<h2>canvas</h2>
+
+<pre><code class="r">canvas &lt;- function(min = 0, max = 100) {
+    plot(0, ylim = c(0, 100), xlim = c(0, 100), type = &quot;n&quot;, xaxt = &quot;n&quot;, yaxt = &quot;n&quot;, 
+        xlab = &quot;&quot;, ylab = &quot;&quot;, bty = &quot;n&quot;, asp = 1)
+}
+</code></pre>
+
+<h2>drawCircle</h2>
+
+<pre><code class="r">drawCircle &lt;- function(x, y, r, ...) {
+    angs &lt;- seq(0, 2 * pi, length = 100)
+    xpts &lt;- x + r * cos(angs)
+    ypts &lt;- y + r * sin(angs)
+    circle &lt;- polygon(xpts, ypts, ...)
+    return(circle)
+}
+</code></pre>
+
+<h2>Overlapping Circles</h2>
+
+<pre><code class="r">canvas(0, 100)
+drawCircle(54, 45, 10, col = &quot;purple&quot;, border = NULL)
+</code></pre>
+
+<pre><code>## NULL
+</code></pre>
+
+<pre><code class="r">drawCircle(43, 21, 20, col = &quot;pink&quot;, border = NULL)
+</code></pre>
+
+<pre><code>## NULL
+</code></pre>
+
+<pre><code class="r">drawCircle(76, 36, 18, col = &quot;yellow&quot;, border = NULL)
+</code></pre>
+
+<p><img src="data:image/png;base64,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" alt="plot of chunk unnamed-chunk-15"/> </p>
+
+<pre><code>## NULL
+</code></pre>
+
+<h2>Olympic Logo</h2>
+
+<pre><code class="r">canvas(0, 100)
+drawCircle(15, 25, 10, col = &quot;transparent&quot;, border = &quot;blue&quot;, lwd = 5)
+</code></pre>
+
+<pre><code>## NULL
+</code></pre>
+
+<pre><code class="r">drawCircle(45, 25, 10, col = &quot;transparent&quot;, border = &quot;black&quot;, lwd = 5)
+</code></pre>
+
+<pre><code>## NULL
+</code></pre>
+
+<pre><code class="r">drawCircle(75, 25, 10, col = &quot;transparent&quot;, border = &quot;red&quot;, lwd = 5)
+</code></pre>
+
+<pre><code>## NULL
+</code></pre>
+
+<pre><code class="r">drawCircle(30, 15, 10, col = &quot;transparent&quot;, border = &quot;yellow&quot;, lwd = 5)
+</code></pre>
+
+<pre><code>## NULL
+</code></pre>
+
+<pre><code class="r">drawCircle(60, 15, 10, col = &quot;transparent&quot;, border = &quot;green&quot;, lwd = 5)
+</code></pre>
+
+<p><img src="data:image/png;base64,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" alt="plot of chunk unnamed-chunk-16"/> </p>
+
+<pre><code>## NULL
+</code></pre>
+
+</body>
+
+</html>
+
