@@ -182,27 +182,50 @@ hljs.initHighlightingOnLoad();
 
 <h2>formatWord Function</h2>
 
-<pre><code class="r">formatWord &lt;- function(word, translation, class) {
-    if (is.na(translation) == TRUE) 
-        return(as, character(word)) else {
-        paste(&quot;&lt;span class=&#39; &quot;, class, &quot;&#39;, title=&#39;&quot;, translation, &quot;&#39;&gt;&quot;, word, 
-            &quot;&lt;/span&gt;&quot;)
-    }
+<pre><code class="r">
+formatWord &lt;- function(word, trans, class1) {
+    if (is.na(trans)) 
+        return(word)
+    test1 &lt;- paste(&quot;&lt;span class=&#39;&quot;, class1, &quot;&#39; &quot;, sep = &quot;&quot;)
+    test2 &lt;- paste(test1, &quot;title=&#39;&quot;, trans, &quot;&#39;&gt;&quot;, sep = &quot;&quot;)
+    test3 &lt;- paste(test2, word, &quot;&lt;/span&gt;&quot;, sep = &quot;&quot;)
+    return(test3)
 }
 </code></pre>
 
-<h1>Test Case</h1>
+<h2>Testing</h2>
 
-<pre><code class="r">cat(formatWord(&quot;Hello&quot;, &quot;hi there!&quot;, class = &quot;hiword&quot;))
+<pre><code class="r">cat(formatWord(&quot;Hello&quot;, &quot;hi there!&quot;, &quot;hiword&quot;))
 </code></pre>
 
-<p><span class='  hiword ', title=' hi there! '> Hello </span></p>
+<p><span class='hiword' title='hi there!'>Hello</span></p>
 
-<pre><code class="r">cat(formatWord(&quot;Hello&quot;, &quot;hi there!&quot;, class = &quot;hiword&quot;), &quot;to&quot;, &quot;all&quot;, &quot;of&quot;, &quot;you&quot;, 
-    &quot;in&quot;, formatWord(&quot;Television Land.&quot;, &quot;TV viewers&quot;, class = &quot;hiword&quot;))
+<pre><code class="r">
+cat(formatWord(&quot;Hello&quot;, &quot;hi there!&quot;, class = &quot;hiword&quot;), &quot;to&quot;, &quot;all&quot;, &quot;of&quot;, &quot;you&quot;, 
+    &quot;in&quot;, formatWord(&quot;Television Land.&quot;, &quot;TV Viewers&quot;, &quot;hiword&quot;))
 </code></pre>
 
-<p><span class='  hiword ', title=' hi there! '> Hello </span> to all of you in <span class='  hiword ', title=' TV viewers '> Television Land. </span></p>
+<p><span class='hiword' title='hi there!'>Hello</span> to all of you in <span class='hiword' title='TV Viewers'>Television Land.</span></p>
+
+<h2>FormatString Function</h2>
+
+<pre><code class="r">formatString &lt;- function(word, tips, styles) {
+    results &lt;- c()
+    for (k in 1:length(word)) {
+        results[k] &lt;- formatWord(word[k], tips[k], styles[k])
+    }
+    return(cat(results))
+}
+</code></pre>
+
+<h2>Testing</h2>
+
+<pre><code class="r">formatString(c(&quot;How&quot;, &quot;now&quot;, &quot;brown&quot;, &quot;cow&quot;, &quot;!&quot;), c(&quot;How are you doing?&quot;, NA, 
+    &quot;Why brown?&quot;, &quot;bovine&quot;, &quot;enthusiasm&quot;), c(&quot;hiword&quot;, &quot;&quot;, &quot;brown&quot;, &quot;blue&quot;, 
+    &quot;hiword&quot;))
+</code></pre>
+
+<p><span class='hiword' title='How are you doing?'>How</span> now <span class='brown' title='Why brown?'>brown</span> <span class='blue' title='bovine'>cow</span> <span class='hiword' title='enthusiasm'>!</span></p>
 
 </body>
 
