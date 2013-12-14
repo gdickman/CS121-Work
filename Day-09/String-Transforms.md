@@ -38,7 +38,7 @@ Scrambler("hello")
 ```
 
 ```
-## [1] "elohl"
+## [1] "lehol"
 ```
 
 
@@ -80,5 +80,26 @@ L33t("graces")
 
 ```
 ## [1] "9rac35"
+```
+
+
+## Cypher
+
+```r
+cypher <- function(input) {
+    cypher <- chartr("abcdefghijklmnopqrstuvwxyz", "mnopqrstuvwxyzabcdefghijkl", 
+        input)
+    return(cypher)
+}
+```
+
+
+
+```r
+cypher("dogz")
+```
+
+```
+## [1] "pasl"
 ```
 

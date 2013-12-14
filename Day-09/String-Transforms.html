@@ -207,7 +207,7 @@ hljs.initHighlightingOnLoad();
 <pre><code class="r">Scrambler(&quot;hello&quot;)
 </code></pre>
 
-<pre><code>## [1] &quot;elohl&quot;
+<pre><code>## [1] &quot;lehol&quot;
 </code></pre>
 
 <h2>VowelBleeper</h2>
@@ -237,6 +237,21 @@ hljs.initHighlightingOnLoad();
 </code></pre>
 
 <pre><code>## [1] &quot;9rac35&quot;
+</code></pre>
+
+<h2>Cypher</h2>
+
+<pre><code class="r">cypher &lt;- function(input) {
+    cypher &lt;- chartr(&quot;abcdefghijklmnopqrstuvwxyz&quot;, &quot;mnopqrstuvwxyzabcdefghijkl&quot;, 
+        input)
+    return(cypher)
+}
+</code></pre>
+
+<pre><code class="r">cypher(&quot;dogz&quot;)
+</code></pre>
+
+<pre><code>## [1] &quot;pasl&quot;
 </code></pre>
 
 </body>
