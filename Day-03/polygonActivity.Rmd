@@ -1,0 +1,50 @@
+# Blank "Canvases", Circles and Squares
+========================================================
+
+- To create a plot, use the command plot()
+
+```{r, plot, fig.width=7, fig.height=7, message=FALSE }
+plot(1:2,xlim=c(0,100), ylim=c(0,100), type="n", xlab="", ylab="")
+```
+
+- To create a polygon, use the command polygon()
+
+```{r fig.width=7, fig.height=7}
+plot(1:2,xlim=c(0,100), ylim=c(0,100), type="n", xlab="", ylab="")
+polygon(c(25,35,35,25),c(25,25,35,35),col="red",border="black")
+```
+
+- To create a circle, you have to plot points with the agnles of a circle
+```{r fig.width=7, fig.height=7}
+circle<-function(x,y,r,ry=r,...) {
+  angs<-seq(0, 2*pi, length=300)
+  xpts<-x+r*cos(angs)
+  ypts<-y+ry*sin(angs)
+  polygon(xpts, ypts,...)
+  }
+plot(1:2,xlim=c(0,100), ylim=c(0,100), type="n", xlab="", ylab="")
+circle(50, 50, 20, col=scales::alpha("blue", 0.3), border="white")
+circle(20, 60, 10, 40, col=scales::alpha("pink", 0.3), border="white")
+```
+
+- The second polygon is created similarly to the square, except 5 points are plotted because it is a pentagon
+```{r fig.width=7, fig.height=7}
+plot(1:2,xlim=c(0,100), ylim=c(0,100), type="n", xlab="", ylab="")
+polygon(c(58,63,83,88,73),c(85,65,65,85,95),col="yellow",border="NA")
+```
+
+- The last sqaure can be drawn using the polygon() command
+```{r fig.width=7, fig.height=7}
+plot(1:2,xlim=c(0,100), ylim=c(0,100), type="n", xlab="", ylab="")
+polygon(c(15,30,30,15),c(45,45,60,60),col="green",border="blue")
+```
+
+- Together on a plot, it looks like this:
+```{r fig.width=7, fig.height=7}
+plot(1:2,xlim=c(0,100), ylim=c(0,100), type="n", xlab="", ylab="")
+polygon(c(20,40,40,20),c(20,20,40,40),col=scales::alpha("red", 0.5), border="black")
+circle(50, 50, 20, col=scales::alpha("light blue", 0.4), border=NA)
+circle(20, 65, 10, 20, col=scales::alpha("pink", 0.5), border=NA)
+polygon(c(58,63,83,88,73),c(65,45,45,65,75),col=scales::alpha("yellow", 0.5), border=NA)
+polygon(c(20,45,45,20),c(45,45,70,70),col=scales::alpha("green", 0.5), border="blue", lwd = 4)
+```
