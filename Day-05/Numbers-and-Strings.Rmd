@@ -1,0 +1,64 @@
+Numbers and Strings
+========================================================
+
+## Outlier Function
+```{r}
+outlier <- function(x){
+  #define the state
+  x<-c(0:9)
+  #update the state
+  outlier<-quantile(x, probs = seq(0.25,0.75), na.rm = FALSE, names = TRUE, type = 7)
+  return(outlier)
+}
+```
+
+## Numbers and Languages
+```{r}
+  digitToWord <- function (number,word) {
+  dtw <- word[number]
+  return(dtw)
+}
+digitToWord(c(9,8,7,6,5,4,3,2,1), c("one", "two", "three", "four", "five", "six", "seven", "eight", "nine"))
+```
+
+## Help for Crossword Puzzles
+```{r}
+LettersMatch <- function(words, pattern){
+  small<-c("case", "second", "third", "are")
+  match<-grepl("^...$", small)
+  return(match)
+}
+```
+
+```{r}
+LettersMatch("base", 3)
+```
+
+## Have Your Pi Two Ways
+```{r}
+piSeries <- function(n) {
+  n <- c(1:n)
+    pi <- (4 * sum( ((-1)^(n-1)) / (2*(n-1)+1)))
+  return(pi) 
+}
+```
+
+```{r}
+piSeries(100000)
+```
+
+## How Close to Pi
+```{r}
+howCloseToPi <- function(n) {
+  n <- c(1:n)
+  pi <- (4 * cumsum( ((-1)^(n-1)) / (2*(n-1)+1)))
+  plot(n, pi)
+  return(pi)
+  }
+```
+
+```{r}
+howCloseToPi(4)
+```
+
+- This is similar to an alternating series...just a simple connection to my single variable calculus class...
