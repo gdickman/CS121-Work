@@ -180,21 +180,75 @@ hljs.initHighlightingOnLoad();
 <body>
 <h1>Substitution Cypher</h1>
 
-<h2>Step 1:Key</h2>
+<h2>Step 1, the Key</h2>
 
-<pre><code class="r">key &lt;- function(k) {
-    key &lt;- strsplit(k, NULL)
-    for (k in length(1:10)) {
-        1 &lt;- &quot;a&quot;
-    }
-    return(key)
+<pre><code class="r">key &lt;- &quot;zoo&quot;
+first &lt;- function(L) {
+    which(L == letters)
 }
+paste(sapply(unlist(strsplit(key, split = NULL)), FUN = first), collapse = &quot;&quot;)
 </code></pre>
 
-<pre><code class="r">key(&quot;aaa&quot;)
+<pre><code>## [1] &quot;261515&quot;
 </code></pre>
 
-<pre><code>## Error: invalid (do_set) left-hand side to assignment
+<pre><code class="r">first(&quot;zoo&quot;)
+</code></pre>
+
+<pre><code>## integer(0)
+</code></pre>
+
+<h2>Step 2, the Cypher</h2>
+
+<pre><code class="r">set.seed(paste(sapply(unlist(strsplit(key, split = NULL)), FUN = first), collapse = &quot;&quot;))
+characters &lt;- c(letters, LETTERS, &quot;.&quot;, &quot;:&quot;, &quot;,&quot;, &quot;;&quot;, 0:9)
+fromandto &lt;- sample(characters)
+fromandto
+</code></pre>
+
+<pre><code>##  [1] &quot;q&quot; &quot;z&quot; &quot;j&quot; &quot;:&quot; &quot;D&quot; &quot;s&quot; &quot;i&quot; &quot;F&quot; &quot;y&quot; &quot;a&quot; &quot;8&quot; &quot;W&quot; &quot;K&quot; &quot;O&quot; &quot;f&quot; &quot;k&quot; &quot;d&quot;
+## [18] &quot;u&quot; &quot;L&quot; &quot;,&quot; &quot;P&quot; &quot;l&quot; &quot;Q&quot; &quot;E&quot; &quot;C&quot; &quot;Z&quot; &quot;A&quot; &quot;n&quot; &quot;G&quot; &quot;X&quot; &quot;g&quot; &quot;o&quot; &quot;b&quot; &quot;S&quot;
+## [35] &quot;J&quot; &quot;m&quot; &quot;V&quot; &quot;v&quot; &quot;7&quot; &quot;H&quot; &quot;e&quot; &quot;Y&quot; &quot;6&quot; &quot;4&quot; &quot;5&quot; &quot;0&quot; &quot;2&quot; &quot;U&quot; &quot;1&quot; &quot;r&quot; &quot;t&quot;
+## [52] &quot;w&quot; &quot;h&quot; &quot;;&quot; &quot;p&quot; &quot;M&quot; &quot;9&quot; &quot;x&quot; &quot;3&quot; &quot;I&quot; &quot;R&quot; &quot;c&quot; &quot;T&quot; &quot;.&quot; &quot;B&quot; &quot;N&quot;
+</code></pre>
+
+<h2>Step 3, the Encryption</h2>
+
+<pre><code class="r">encrypt &lt;- chartr(paste(characters, collapse = &quot;&quot;), paste(fromandto, collapse = &quot;&quot;), 
+    &quot;Cannot read this&quot;)
+encrypt
+</code></pre>
+
+<pre><code>## [1] &quot;GqOOf, uDq: ,FyL&quot;
+</code></pre>
+
+<h2>Step 4, the Decryption</h2>
+
+<pre><code class="r">decoded &lt;- chartr(paste(fromandto, collapse = &quot;&quot;), paste(characters, collapse = &quot;&quot;), 
+    encrypt)
+decoded
+</code></pre>
+
+<pre><code>## [1] &quot;Cannot read this&quot;
+</code></pre>
+
+<h2>The Paragraph</h2>
+
+<pre><code class="r">paragraph &lt;- chartr(paste(characters, collapse = &quot;&quot;), paste(fromandto, collapse = &quot;&quot;), 
+    &quot;Many many sentences which you will not be able to read.  This class has now taught me to encrypt things, which actually makes me feel like a spy.  Possibly I could use this in the CIA? I would never work for the CIA, I am not sneaky enough.&quot;)
+paragraph
+</code></pre>
+
+<pre><code>## [1] &quot;7qOC KqOC LDO,DOjDL QFyjF CfP QyWW Of, zD qzWD ,f uDq:h  0FyL jWqLL FqL OfQ ,qPiF, KD ,f DOjuCk, ,FyOiLp QFyjF qj,PqWWC Kq8DL KD sDDW Wy8D q LkCh  YfLLyzWC J jfPW: PLD ,FyL yO ,FD GJA? J QfPW: ODlDu Qfu8 sfu ,FD GJAp J qK Of, LODq8C DOfPiFh&quot;
+</code></pre>
+
+<pre><code class="r">
+decoded &lt;- chartr(paste(fromandto, collapse = &quot;&quot;), paste(characters, collapse = &quot;&quot;), 
+    paragraph)
+decoded
+</code></pre>
+
+<pre><code>## [1] &quot;Many many sentences which you will not be able to read.  This class has now taught me to encrypt things, which actually makes me feel like a spy.  Possibly I could use this in the CIA? I would never work for the CIA, I am not sneaky enough.&quot;
 </code></pre>
 
 </body>
