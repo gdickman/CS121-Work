@@ -174,7 +174,7 @@ integrateRecursive <- function(f, a = 0, b = 1,lim=1e-05,origwidth=b-a) {
 ```{r}
 integrateRecursive(function(x)5*x, 0, 2)
 ```
-$\int_0^2 5xdx = 2.5x^2|_0^2 = 10$
+$\int_0^2 5xdx = 2.5x^2|_0^2 = 10$ 
 
 ```{r}  
 integrateRecursive( function(x){sin(1/x)},0,1)  

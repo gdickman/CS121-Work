@@ -259,7 +259,7 @@ integrateRecursive(function(x) 5 * x, 0, 2)
 ## [1] 10
 ```
 
-$\int_0^2 5xdx = 2.5x^2|_0^2 = 10$
+$\int_0^2 5xdx = 2.5x^2|_0^2 = 10$ 
 
 
 ```r
@@ -283,53 +283,3 @@ integrateRecursive(function(x) {
 ```
 
 $\int_0^(1) sin(frac{1}{x})dx = 0.5041$
-
-## guassQuadrature
-
-```r
-gaussQuadrature <- function(f, a = 0, b = 1) {
-    z <- c(c(-1, 1) * sqrt((3 - 2 * sqrt(6/5))/7), c(-1, 1) * sqrt((3 + 2 * 
-        sqrt(6/5))/7))
-    w <- c(rep((18 + sqrt(30))/36, 2), rep((18 - sqrt(30))/36, 2))
-    x <- ((b - a)/2) * z + (a + b)/2
-    return(((b - a)/2) * sum(w * sapply(x, f)))
-}
-
-gaussQuadrature(function(x) 3 * x^15, 0, 10)
-```
-
-```
-## [1] 1.797e+15
-```
-
-$\int_0^{10} 3x^{15}dx =frac{3x^16}{16}|_0^10 = 1.797084 * 10^{15}$
-
-
-```r
-plotF <- function(f, a = 0, b = 1) {
-    getX <- function(f, a = 0, b = 1) {
-        mid <- (a + b)/2
-        bigBins <- simpleRiemann(f, a = a, b = b, n = 101)
-        smallBins <- gaussQuadrature(f, a = a, b = b)
-        if (abs(bigBins - smallBins) < 1e-05) {
-            return(seq(a, b, length = 101))
-        } else {
-            return(c(getX(f, a, mid), getX(f, mid, b)))
-        }
-    }
-    x <- getX(f, a, b)
-    plot(f(x) ~ x, pch = 20, cex = 0.2, type = "l")
-}
-
-plotF(sin, 0, 2 * pi)
-```
-
-![plot of chunk unnamed-chunk-22](figure/unnamed-chunk-221.png) 
-
-```r
-
-plotF(cos, 0, 10)
-```
-
-![plot of chunk unnamed-chunk-22](figure/unnamed-chunk-222.png) 
-
